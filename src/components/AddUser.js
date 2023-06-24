@@ -7,12 +7,15 @@ const AddUser = () => {
   return (
     <div className={styles.input}>
       <div>
-        <label>Username</label>
-        <input></input>
-      </div>
-      <div>
-        <label>Age (years)</label>
-        <input></input>
+        <div>
+          <label>Username</label>
+          <input></input>
+        </div>
+
+        <div>
+          <label>Age (years)</label>
+          <input></input>
+        </div>
       </div>
       <button type="submit">Add User</button>
     </div>
