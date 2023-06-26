@@ -3,16 +3,16 @@ import AddUser from "./components/AddUser";
 import UserList from "./components/UserList";
 
 function App() {
-  const [dataList, setDataList] = useState([]);
+  const [users, setUsers]  = useState([]);
 
-  const listHandler = (dataList) => {
-    setDataList(dataList);
+  const addUser = (userToAdd) => {
+    setUsers(prevState => [...prevState, userToAdd]);
   };
 
   return (
     <div>
-      <AddUser listHandler={listHandler} />
-      <UserList dataList={dataList} />
+      <AddUser addHandler={addUser} />
+      <UserList dataList={users} />
     </div>
   );
 }

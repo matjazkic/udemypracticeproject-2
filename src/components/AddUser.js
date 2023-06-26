@@ -2,17 +2,19 @@ import React, { useState } from "react";
 import styles from "./AddUser.module.css";
 
 const AddUser = (props) => {
-  const [dataList, setDataList] = useState([{}]);
+  const [userData, setUserData] = useState({});
 
   const submitHandler = (event) => {
     event.preventDefault();
-    props.listHandler(dataList);
+    props.addHandler(userData);
   };
 
-  const changeHandler = (input, value) => {
-    setDataList((prevInput) => {
-      return { ...prevInput, [input]: value };
-    });
+  const changeUsername = (value) => {
+    setUserData(prevState => ({age: prevState.age, username: value}))
+  };
+
+  const changeAge = (value) => {
+    setUserData(prevState =>  ({age: value, username: prevState.username}))
   };
 
   return (
@@ -23,7 +25,7 @@ const AddUser = (props) => {
           <input
             id="username"
             type="text"
-            onChange={(event) => changeHandler("username", event.target.value)}
+            onChange={(event) => changeUsername(event.target.value)}
           ></input>
         </div>
 
@@ -32,7 +34,7 @@ const AddUser = (props) => {
           <input
             id="age"
             type="number"
-            onChange={(event) => changeHandler("age", event.target.value)}
+            onChange={(event) => changeAge(event.target.value)}
           ></input>
         </div>
       </div>
