@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import styles from "./AddUser.module.css";
 
 const AddUser = (props) => {
-  const [dataList, setDataList] = useState([{}]);
+  const [dataList, setDataList] = useState('');
 
   const submitHandler = (event) => {
     event.preventDefault();
     props.listHandler(dataList);
+    console.log(dataList)
   };
 
   const changeHandler = (input, value) => {

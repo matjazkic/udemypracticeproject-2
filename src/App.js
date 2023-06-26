@@ -6,9 +6,10 @@ function App() {
   const [dataList, setDataList] = useState([]);
 
   const listHandler = (dataList) => {
-    setDataList(dataList);
-  };
-
+    setDataList((seznam => {   return[...seznam, { username: dataList.username, age: dataList.age }]
+    })) 
+    console.log(dataList)
+};
   return (
     <div>
       <AddUser listHandler={listHandler} />

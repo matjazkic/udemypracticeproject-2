@@ -1,14 +1,16 @@
 import React from "react";
 
 const UserList = (props) => {
-  const dataList = [props.dataList];
+  const myList = props.dataList;
+  console.log(props.dataList)
+  console.log(myList)
 
   return (
     <div>
-      {dataList.map((data) => (
+      {props.dataList.map((listItem) => (
         <ul>
-          <li>{data.username}</li>
-          <li>{data.age}</li>
+          <li>{listItem.username}</li>
+          <li>{listItem.age}</li>
         </ul>
       ))}
     </div>
