@@ -1,19 +1,22 @@
 import React from "react";
+import Card from './Card'
 
 const UserList = (props) => {
-  const myList = props.dataList;
-  console.log(props.dataList)
-  console.log(myList)
+// we recieve dataList props which contains data for the list to render
+console.log(props.dataList)
 
   return (
-    <div>
+    <Card>
       {props.dataList.map((listItem) => (
         <ul>
-          <li>{listItem.username}</li>
-          <li>{listItem.age}</li>
+          <li>
+            {listItem.username} ( is {listItem.age} years old.)
+            
+          </li>
+         
         </ul>
       ))}
-    </div>
+    </Card>
   );
 };
 export default UserList;
