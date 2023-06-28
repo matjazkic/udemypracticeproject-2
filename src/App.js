@@ -2,30 +2,27 @@ import React, { useState } from "react";
 import AddUser from "./components/AddUser";
 import UserList from "./components/UserList";
 
-
 function App() {
-// we create a list for usage
-  const [dataList, setDataList] = useState([]);
+  // we create a list for usage
+  const [users, setUsers] = useState([]);
 
   // in this function we get data from child component and set it to inputed values + old values in array
-  const listHandler = (dataList) => {
-    
-      setDataList((seznam) => {
-        return [
-          ...seznam,
-          {
-            key: Math.random().toString(),
-            username: dataList.username,
-            age: dataList.age,
-          },
-        ];
-      });
-    
-};
+  const addUser = (users) => {
+    setUsers((seznam) => {
+      return [
+        ...seznam,
+        {
+          key: Math.random().toString(),
+          username: users.username,
+          age: users.age,
+        },
+      ];
+    });
+  };
   return (
     <div>
-      <AddUser listHandler={listHandler} />
-      <UserList dataList={dataList} />
+      <AddUser addHandler={addUser} />
+      <UserList dataList={users} />
     </div>
   );
 }
