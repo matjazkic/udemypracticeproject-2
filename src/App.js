@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import AddUser from "./components/AddUser";
 import UserList from "./components/UserList";
+import Card from "./components/Card";
 
 function App() {
   // we create a list for usage
@@ -20,10 +21,12 @@ function App() {
     });
   };
   return (
-    <div>
-      <AddUser addHandler={addUser} />
-      <UserList dataList={users} />
-    </div>
+    <Card >
+      <div>
+        <AddUser addHandler={addUser} />
+        <UserList dataList={users} />
+      </div>
+    </Card>
   );
 }
 
