@@ -21,12 +21,12 @@ function App() {
     });
   };
   return (
-    <Card >
+    < >
       <div>
         <AddUser addHandler={addUser} />
         <UserList dataList={users} />
       </div>
-    </Card>
+    </>
   );
 }
 
